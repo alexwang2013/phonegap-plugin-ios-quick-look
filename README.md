@@ -13,7 +13,9 @@ to downlaod from file you could visit http://mythoughtsandexperiments.blogspot.j
 
 for using phonegap-plugin-ios-quick-look, you could using 
 
-var fullpath="your.file.fullpat";
+
+
+var fullpath="your.file.fullpath";
 cordova.exec(
 
 	function() { return; },
