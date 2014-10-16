@@ -3,6 +3,7 @@
 //  quickLookFile
 //
 //  Copyright (c) 2013 Mark van den Bergh
+//  Copyright (c) 2014 zhaoqiang wang
 //
 //  You may use this code under the terms of the MIT License.
 //
@@ -30,6 +31,6 @@
     NSString *localFile;
 }
 
-- (void) quickLookFile:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options;
+- (void)quickLookFile:(CDVInvokedUrlCommand*)command;
 
 @end

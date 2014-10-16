@@ -3,6 +3,7 @@
 //  quickLookFile
 //
 //  Copyright (c) 2013 Mark van den Bergh
+//  Copyright (c) 2014 zhaoqiang wang
 //  
 //  You may use this code under the terms of the MIT License.
 //
@@ -29,14 +30,20 @@
 
 @implementation CDVQuickLookPlugin
 
-- (void) quickLookFile:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+//- (void) quickLookFile:(NSMutableArray*)arguments withDict:(NSMutableDictionary*)options
+//{
+//    NSString *callbackID = [arguments pop];
+//    
+- (void)quickLookFile:(CDVInvokedUrlCommand*)command
 {
-    NSString *callbackID = [arguments pop];
+    NSString *callbackID = command.callbackId;
+    NSArray *arguments = command.arguments;
+    NSDictionary *options = [arguments objectAtIndex:0];
     NSString *path = [arguments objectAtIndex:0];     
     
     // determine UTI from file extension
     NSString *extension = [[arguments objectAtIndex:0] pathExtension];
-    NSString *uti = (NSString *) UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (CFStringRef)extension, NULL);
+    NSString *uti = (__bridge NSString *) UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)extension, NULL);
     
     path = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
