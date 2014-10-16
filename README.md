@@ -13,10 +13,15 @@ to downlaod from file you could visit http://mythoughtsandexperiments.blogspot.j
 
 for using phonegap-plugin-ios-quick-look, you could using 
 
+var fullpath="your.file.fullpat";
 cordova.exec(
+
 	function() { return; },
+
 	function() { return; },
-	"QuickLookPlugin", "quickLookFile", [url]
+
+	"QuickLookPlugin", "quickLookFile", [fullpath]
+
 );
 
 
